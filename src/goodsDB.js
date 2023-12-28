@@ -159,7 +159,6 @@ async function addToCart(id, { qty }) {
   }
 
   return await localforage.setItem("cartItems", CartItems);
-  // return item;
 }
 
 async function updateProductInCart(id, qty) {
