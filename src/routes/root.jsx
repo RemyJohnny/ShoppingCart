@@ -7,7 +7,7 @@ export const Root = () => {
 
   return (
     <div>
-      <Header cartSize={CartItem.length} />
+      <Header cartSize={CartItem ? CartItem.length : 0} />
       <div className=" flex justify-center">
         <Outlet context={products} />
       </div>

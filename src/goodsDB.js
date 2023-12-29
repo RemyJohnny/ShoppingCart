@@ -97,11 +97,10 @@ const Products = [
   Golden acorn and 100% natural color. Aromas of fresh honeycomb, sweet toffee, red apple, fig and vanilla pod. On the palate, a smooth melody of cinnamon, ginger, Madagascan vanilla, dried fruits and oak. Finishes with sweet oak, soft spice and toffee.`
   ),
 ];
-const CartItems = [];
 
 const addProductToDB = async () => {
   await localforage.setItem("products", Products);
-  await localforage.setItem("cartItems", CartItems);
+  const CartItems = await localforage.setItem("cartItems", CartItems);
   console.log("called");
 };
 addProductToDB();
