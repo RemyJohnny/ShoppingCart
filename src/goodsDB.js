@@ -99,9 +99,12 @@ const Products = [
 ];
 
 const addProductToDB = async () => {
+  //let CartItems = /*  await localforage.getItem("cartItems") */ [];
+  // if (!CartItems) CartItems = [];
   await localforage.setItem("products", Products);
-  const CartItems = await localforage.setItem("cartItems", CartItems);
-  console.log("called");
+  //await localforage.setItem("cartItems", CartItems);
+  // console.log(CartItems);
+  console.log("called"); /*  */
 };
 addProductToDB();
 

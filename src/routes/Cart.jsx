@@ -81,7 +81,14 @@ const Cart = () => {
           SHOPPING CART{` (${products.length})`}
         </div>
         {products.map((item) => {
-          return <CartItem product={item} key={item.id} onChange={onchange} />;
+          return (
+            <CartItem
+              product={item}
+              key={item.id}
+              onChange={onchange}
+              route="/shop"
+            />
+          );
         })}
       </div>
 

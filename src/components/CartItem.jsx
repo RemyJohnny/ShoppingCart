@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, Form } from "react-router-dom";
 import propTypes from "prop-types";
 
-const CartItem = ({ product, route = "", onChange }) => {
+const CartItem = ({ product, route, onChange }) => {
   const [total, setTotal] = useState(product.price);
   const [input, setInput] = useState(product.qty);
 
