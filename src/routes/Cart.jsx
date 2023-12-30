@@ -75,7 +75,7 @@ const Cart = () => {
   };
 
   return (
-    <div className=" flex flex-col md:flex-row min-h-screen items-start gap-3 bg-slate-50 w-full h-full py-4 justify-center">
+    <div className=" flex flex-col md:flex-row min-h-screen md:items-start gap-3 bg-slate-50 w-full h-full py-4 justify-center">
       <div className=" flex flex-col items-center rounded-lg p-2 bg-white shadow ">
         <div className="border-b font-semibold text-xl w-full text-center py-2 ">
           SHOPPING CART{` (${products.length})`}

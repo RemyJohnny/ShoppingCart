@@ -138,6 +138,8 @@ async function deleteProduct(id) {
 }
 async function getCartItems() {
   let cartItems = await localforage.getItem("cartItems");
+  if (!cartItems) cartItems = [];
+  console.log("get cart item");
   return cartItems;
 }
 async function addToCart(id, { qty }) {
@@ -145,6 +147,7 @@ async function addToCart(id, { qty }) {
   let CartItems = await localforage.getItem("cartItems");
   let item = products.find((item) => item.id === id);
   if (!item) throw new Error("No product found for", id);
+  if (!CartItems) CartItems = [];
   let itemInCart = CartItems.find((i) => i.id === item.id);
   if (itemInCart) {
     if (
@@ -152,7 +155,7 @@ async function addToCart(id, { qty }) {
     ) {
       itemInCart.qty++;
       console.log(CartItems);
-    } else return item;
+    }
   } else {
     //Object.assign(item, qty);
     item.qty = qty;
